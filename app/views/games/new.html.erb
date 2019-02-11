@@ -1,0 +1,23 @@
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+  <h1>New Game!</h1>
+  <!-- <p>Find me in app/views/games/new.html.erb</p>
+   -->
+  <p><%= @letters %></p>
+
+  <p>What's the longest word you can find?</p>
+  <form action="/score" method="post" class="form-inline">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputWord" class="sr-only">Word</label>
+      <input type="text" name="word" class="form-control" id="inputWord" placeholder="Your word here">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Play</button>
+  </form>
+</body>
